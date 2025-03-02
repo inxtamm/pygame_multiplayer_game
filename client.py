@@ -58,7 +58,7 @@ class Client:
         self.world = World(d)
         self.particle_manager = ParticleManager()
         self.start_pos = [100, 100]
-        self.player = Player(self.start_pos, (9, 13), (255, 0, 0), self._id)
+        self.player = Player(self.start_pos, (9, 13), self._id)
         self.camera = Camera(self.player)
         self.network = Network(self.player)
         self.player.level = self.world.map
