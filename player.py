@@ -11,14 +11,12 @@ def collided_tile_list(tile_list, rect):
     return hit_list
 
 class Player:
-    def __init__(self, pos, size, color, id=""):
+    def __init__(self, pos, size, id=""):
         self.pos = list(pos)
         self.size = list(size)
         self.color = color
         self.id = id
-        self.rect_pos_offset = [0, 0]
         self.velocity = [0, 0]
-        self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         self.action = 'idle'
         self.flip = False
         self.weapon = Weapon(self, 'shotgun')
@@ -34,7 +32,7 @@ class Player:
     
     @property
     def rect(self):
-        return pygame.Rect(self.pos[0] - self.rect_pos_offset[0], self.pos[1] - self.rect_pos_offset[1], self.size[0], self.size[1])
+        return pygame.Rect(self.pos[0], self.pos[1], self.size[0], self.size[1])
     
     def damage(self, damage):
         self.hurt = 1
