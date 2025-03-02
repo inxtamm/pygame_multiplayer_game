@@ -14,7 +14,6 @@ class Player:
     def __init__(self, pos, size, id=""):
         self.pos = list(pos)
         self.size = list(size)
-        self.color = color
         self.id = id
         self.velocity = [0, 0]
         self.action = 'idle'
